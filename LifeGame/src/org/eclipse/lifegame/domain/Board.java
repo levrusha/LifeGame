@@ -20,9 +20,14 @@ public class Board {
 		
 	}
 	
-	@Override
-	public String toString() {
-		return "Board for game of life";
+	public String toString(int massiv[][]) {
+		for (int i = 1;i<=10;i++) {
+			for (int j=1;j<=10;j++) {
+				if (massiv[i][j]==1) return "X";
+						else return " ";
+			}
+		}
+		return null;
 	}
 
 	public int[][] getCells() {
@@ -32,4 +37,5 @@ public class Board {
 	public void setCells(int[][] cells) {
 		this.cells = cells;
 	}
+	
 }

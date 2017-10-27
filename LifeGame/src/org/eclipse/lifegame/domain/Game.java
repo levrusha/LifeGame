@@ -3,8 +3,10 @@ package org.eclipse.lifegame.domain;
 public class Game {
 	private Board board;
 	private int generation;
+	private static Game game;
+	private static Game theInstance = game;
 	
-	public Game(Board board) {
+	private Game(Board board) {
 		this.board = board;
 		this.generation = 1;
 	}
@@ -20,5 +22,8 @@ public class Game {
 	}
 	public void setGeneration(int generation) {
 		this.generation = generation;
+	}
+	private Game getInstance() {
+		return this.theInstance;
 	}
 }
